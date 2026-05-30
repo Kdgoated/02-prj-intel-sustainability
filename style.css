@@ -1,1 +1,238 @@
-/* Add your CSS here */
+:root {
+  --intel-blue: #0071c5;
+  --intel-dark: #071e43;
+  --intel-light: #f2f8ff;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.16);
+  --text-strong: #f7fbff;
+  --text-muted: #cbd9f8;
+  --shadow: 0 18px 55px rgba(0, 20, 70, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(0, 113, 197, 0.18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(0, 113, 197, 0.12), transparent 20%),
+    linear-gradient(180deg, #071e43 0%, #102a5a 45%, #112b5d 100%);
+  color: var(--text-strong);
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+header {
+  position: relative;
+  padding: 4.5rem 1.5rem 3rem;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 20%),
+    linear-gradient(135deg, rgba(0, 113, 197, 0.36), transparent 40%);
+  pointer-events: none;
+}
+
+header > div {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+header img {
+  width: 120px;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: clamp(2.75rem, 3.5vw, 4.4rem);
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+  max-width: 9ch;
+}
+
+header > div > p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  max-width: 700px;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 2rem;
+}
+
+section::-webkit-scrollbar {
+  height: 10px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+section > div {
+  position: relative;
+  flex: 0 0 320px;
+  min-width: 320px;
+  padding: 1.8rem 1.6rem 1.6rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  scroll-snap-align: start;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+section > div:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 28px 70px rgba(0, 20, 70, 0.24);
+  border-color: rgba(0, 153, 255, 0.5);
+}
+
+section > div h2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(0, 113, 197, 0.18);
+  color: #e9f2ff;
+  font-weight: 700;
+}
+
+section > div h3 {
+  margin: 0 0 1rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+section > div p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+section > div::after {
+  content: "";
+  display: block;
+  margin-top: 1rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.35s ease, max-height 0.35s ease;
+  color: #f5f8ff;
+  line-height: 1.7;
+  font-size: 0.96rem;
+  white-space: pre-wrap;
+}
+
+section > div:hover::after {
+  opacity: 1;
+  max-height: 8rem;
+}
+
+section > div:nth-child(1)::after {
+  content: "This milestone set the stage for decades of innovation and the start of Intel's role in shaping modern computing.";
+}
+
+section > div:nth-child(2)::after {
+  content: "The 4004 brought computing power into a smaller form factor and opened the door to new devices.";
+}
+
+section > div:nth-child(3)::after {
+  content: "The 8086 defined the x86 architecture, powering PCs and servers for years and enabling energy improvements.";
+}
+
+section > div:nth-child(4)::after {
+  content: "By introducing 32-bit performance, the 386 supported better multitasking and more capable software.";
+}
+
+section > div:nth-child(5)::after {
+  content: "This turning point pushed Intel to invest in renewable energy, clean manufacturing, and lower-emission operations.";
+}
+
+section > div:nth-child(6)::after {
+  content: "The RISE strategy set aggressive goals for climate action, water stewardship, and waste reduction through 2030.";
+}
+
+section > div:nth-child(7)::after {
+  content: "Net-zero by 2040 became a central commitment, building on efficiency and renewable energy progress.";
+}
+
+section > div:nth-child(8)::after {
+  content: "99% renewable electricity worldwide helped drive down Intel's operational carbon footprint.";
+}
+
+section > div:nth-child(9)::after {
+  content: "The Sustainability Summit brought partners together to push sustainable semiconductor manufacturing forward.";
+}
+
+body > p {
+  margin: 0 1.5rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+@media (max-width: 960px) {
+  section {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  header {
+    padding: 3rem 1rem 2rem;
+  }
+
+  header > div {
+    padding: 2rem 1.25rem;
+  }
+
+  header > div > p {
+    font-size: 1rem;
+  }
+
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  section > div {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
