@@ -82,7 +82,7 @@ header > div > p {
   max-width: 700px;
 }
 
-section {
+section:first-of-type {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
@@ -93,16 +93,16 @@ section {
   scroll-padding: 2rem;
 }
 
-section::-webkit-scrollbar {
+section:first-of-type::-webkit-scrollbar {
   height: 10px;
 }
 
-section::-webkit-scrollbar-thumb {
+section:first-of-type::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
 }
 
-section > div {
+section:first-of-type > div {
   position: relative;
   flex: 0 0 320px;
   min-width: 320px;
@@ -115,14 +115,13 @@ section > div {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-section > div:hover {
+section:first-of-type > div:hover {
   transform: translateY(-10px) scale(1.01);
   box-shadow: 0 28px 70px rgba(0, 20, 70, 0.24);
   border-color: rgba(0, 153, 255, 0.5);
 }
 
-/* Timeline Images */
-section img {
+section:first-of-type img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -130,12 +129,8 @@ section img {
   margin-bottom: 15px;
 }
 
-section > div h2 {
-  position: relative;
-  z-index: 1;
+section:first-of-type > div h2 {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 0 1rem;
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
@@ -144,75 +139,70 @@ section > div h2 {
   font-weight: 700;
 }
 
-section > div h3 {
-  position: relative;
-  z-index: 1;
+section:first-of-type > div h3 {
   margin: 0 0 1rem;
   font-size: 1.45rem;
   line-height: 1.2;
 }
 
-section > div p {
-  position: relative;
-  z-index: 1;
+section:first-of-type > div p {
   margin: 0;
   color: var(--text-muted);
   line-height: 1.75;
 }
 
-section > div::after {
+section:first-of-type > div::after {
   content: "";
-  position: relative;
   display: block;
   margin-top: 1rem;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.35s ease, max-height 0.35s ease;
+  transition: 0.35s;
   color: #f5f8ff;
   line-height: 1.7;
   font-size: 0.96rem;
   white-space: pre-wrap;
 }
 
-section > div:hover::after {
+section:first-of-type > div:hover::after {
   opacity: 1;
   max-height: 8rem;
 }
 
-section > div:nth-child(1)::after {
+section:first-of-type > div:nth-child(1)::after {
   content: "This milestone set the stage for decades of innovation and the start of Intel's role in shaping modern computing.";
 }
 
-section > div:nth-child(2)::after {
+section:first-of-type > div:nth-child(2)::after {
   content: "The 4004 brought computing power into a smaller form factor and opened the door to new devices.";
 }
 
-section > div:nth-child(3)::after {
+section:first-of-type > div:nth-child(3)::after {
   content: "The 8086 defined the x86 architecture, powering PCs and servers for years and enabling energy improvements.";
 }
 
-section > div:nth-child(4)::after {
+section:first-of-type > div:nth-child(4)::after {
   content: "By introducing 32-bit performance, the 386 supported better multitasking and more capable software.";
 }
 
-section > div:nth-child(5)::after {
+section:first-of-type > div:nth-child(5)::after {
   content: "This turning point pushed Intel to invest in renewable energy, clean manufacturing, and lower-emission operations.";
 }
 
-section > div:nth-child(6)::after {
+section:first-of-type > div:nth-child(6)::after {
   content: "The RISE strategy set aggressive goals for climate action, water stewardship, and waste reduction through 2030.";
 }
 
-section > div:nth-child(7)::after {
+section:first-of-type > div:nth-child(7)::after {
   content: "Net-zero by 2040 became a central commitment, building on efficiency and renewable energy progress.";
 }
 
-section > div:nth-child(8)::after {
+section:first-of-type > div:nth-child(8)::after {
   content: "99% renewable electricity worldwide helped drive down Intel's operational carbon footprint.";
 }
 
-section > div:nth-child(9)::after {
+section:first-of-type > div:nth-child(9)::after {
   content: "The Sustainability Summit brought partners together to push sustainable semiconductor manufacturing forward.";
 }
 
@@ -222,14 +212,87 @@ body > p {
   font-size: 0.96rem;
 }
 
-@media (max-width: 960px) {
-  section {
-    gap: 1rem;
-  }
+.intel-info-section,
+.newsletter-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  section > div::before {
-    height: 140px;
-  }
+.intel-info-section h3,
+.newsletter-section h2 {
+  color: white;
+}
+
+.intel-info-section i {
+  color: #4db8ff;
+  margin-right: 8px;
+}
+
+.intel-info-section p {
+  color: var(--text-muted);
+}
+
+.newsletter-section form {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.form-label {
+  color: white;
+}
+
+.form-control {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.accordion-item {
+  background: rgba(255,255,255,0.08);
+}
+
+.accordion-button {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgba(0,113,197,0.35);
+  color: white;
+}
+
+.accordion-body {
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.intel-footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0,0,0,0.3);
+  margin-top: 40px;
+}
+
+.intel-footer p {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.intel-footer a {
+  color: #4db8ff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.intel-footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 760px) {
@@ -245,21 +308,113 @@ body > p {
     font-size: 1rem;
   }
 
-  section {
+  section:first-of-type {
     flex-direction: column;
     overflow-x: visible;
     scroll-snap-type: none;
   }
 
-  section > div {
-    min-width: auto;
+  section:first-of-type > div {
     width: 100%;
-  }
-
-  section > div::before {
-    right: 1.6rem;
-    width: calc(100% - 3.2rem);
-    height: 180px;
+    min-width: auto;
   }
 }
+.intel-info-section .col-md-4 {
+  text-align: center;
+}
 
+.intel-info-section h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.intel-info-section i {
+  color: #4db8ff;
+  margin-right: 8px;
+}
+
+.intel-info-section p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.newsletter-section h2 {
+  color: #ffffff;
+}
+
+.newsletter-section form {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(16px);
+}
+
+.form-label {
+  color: #ffffff;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.accordion {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  margin-bottom: 10px;
+}
+
+.accordion-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgba(0, 113, 197, 0.3);
+  color: white;
+}
+
+.accordion-body {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.intel-footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+}
+
+.intel-footer p {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.intel-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.intel-footer a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+
+.intel-footer a:hover {
+  text-decoration: underline;
+}
